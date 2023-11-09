@@ -1,0 +1,36 @@
+
+input{
+    margin-top: 10px !important;
+}
+
+
+
+ol{
+    list-style: none !important;
+    
+}
+
+.btn1 {
+   position: absolute;
+   right: 150px !important;
+   
+}
+.btn2{
+    position: absolute;
+    right: 250px !important;
+
+   
+}
+
+.div2{
+    border: 5px solid  black ;
+    margin-top: 10px !important;
+    width: auto !important;
+    height: 60px !important;
+    border-radius: 10px !important;
+    padding: 5px !important;
+    
+}
+.abc{
+    margin-top: 50px;
+}

@@ -1,5 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
- import { getAuth , signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+ import { getAuth , createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
  
  const firebaseConfig = {
    apiKey: "AIzaSyD0FjVwlw_dnXudam_YmvtG-yipsLD8efg",
@@ -17,29 +18,39 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebas
 
 
 
- let sibtn = document.getElementById('sibtn')
+
+
+
+ let btn1 = document.getElementById('subtn')
  
 
- sibtn.addEventListener('click',()=>{
-
-    let sipassword = document.getElementById('sipass')
-    let siemail = document.getElementById('siemail')
-
+ btn1.addEventListener('click',() =>{
+  let password = document.getElementById('spass')
+    let email = document.getElementById('semail')
 
 
-    signInWithEmailAndPassword(auth, siemail.value, sipassword.value)
-.then((userCredential) => {
-    // Signed in 
+
+createUserWithEmailAndPassword(auth, email.value, password.value)
+  .then((userCredential) => {
+    // Signed up 
     const user = userCredential.user;
-    console.log(user.email)
-    window.location = './index.html'
+    console.log(user)
+    window.location ='./signin.html'
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+   
     console.log(errorMessage)
     console.log(errorCode)
-
   });
 
+
  })
+
+  
+
+ 
+
+ 
+

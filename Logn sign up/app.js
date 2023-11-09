@@ -1,51 +1,95 @@
 
- import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
- import { getAuth , createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
- 
- const firebaseConfig = {
-   apiKey: "AIzaSyD0FjVwlw_dnXudam_YmvtG-yipsLD8efg",
-   authDomain: "project-1-64704.firebaseapp.com",
-   projectId: "project-1-64704",
-   storageBucket: "project-1-64704.appspot.com",
-   messagingSenderId: "658759651298",
-   appId: "1:658759651298:web:26348013c0010a765cf3bb",
-   measurementId: "G-XV94SF7FXY"
- };
+// getAttribute
+
+// function clicke(){
+//     var a = document.getElementById('inp')
+//     var b = a.getAttribute('id')
+//     console.log(b)
+// }
+
+//    hasAtribute 
+
+// function clicke(){
+//     var a = document.getElementById('inp')
+//     var b = a.hasAttribute('id')
+//     console.log(b)
+// }
 
 
- const app = initializeApp(firebaseConfig);
- const auth = getAuth(app);
+// function clicke(){
+//     var a = document.getElementById('inp')
+//     var b = a.setAttribute('class','aaa')
+//     console.log(b)
+// }
+// var getul = document.getElementById('ul')
 
+// function clicke(){
+  
 
+//     var a = document.getElementById('inp')
+//     var li = document.createElement("li")
+//     var textli = document.createTextNode(a.value)
 
+//     li.appendChild(textli)
+//     getul.appendChild(li)
+//     a.value = ''
 
-
-
- let btn = document.getElementById('subtn')
- 
-
- btn.addEventListener('click',()=>{
-
-    let password = document.getElementById('spass')
-    let email = document.getElementById('semail')
-
-
-
-createUserWithEmailAndPassword(auth, email.value, password.value)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    console.log(user)
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
    
-    console.log(errorMessage)
-    console.log(errorCode)
-  });
+// }
 
- })
+// function Deletall() {
+//    getul.innerHTML=' '
+// }
 
- 
+let getul = document.getElementById('ul')
 
+function clicke(){
+
+
+    let a = document.getElementById('inp')
+    let li = document.createElement('li')
+    li.setAttribute('class','div2')
+
+    let textli = document.createTextNode(a.value)
+    
+
+    li.appendChild(textli)
+    getul.appendChild(li)
+    a.value = ''
+  
+    //  del btn 
+
+    let Deletbtn = document.createElement('button')
+    let textlidel = document.createTextNode('Delete')
+    Deletbtn.appendChild(textlidel)
+    li.appendChild(Deletbtn)
+    Deletbtn.setAttribute('onclick','del(this)')
+
+    // css class 
+     Deletbtn.setAttribute('class', 'btn btn-outline-danger btn1')
+    // edittext 
+
+    let edits = document.createElement('button')
+    let edittext = document.createTextNode('Edit')
+    edits.appendChild(edittext)
+    li.appendChild(edits)
+    edits.setAttribute('onclick','edit(this)')
+    edits.setAttribute('class','btn btn-outline-primary btn2')
+}
+
+function Deletall(){
+    getul.innerHTML= ''
+}
+
+function del(e){
+    e.parentNode.remove()
+}
+
+function edit(e){
+    let a = prompt('Enter value')
+   e.parentNode.firstChild.nodeValue = a
+}
+// function edit(e){
+//     let a = prompt('Enter value')
+//     e.parentNode.firstChild.nodeValue = a
+// }
