@@ -1,0 +1,2 @@
+try 
+hum jo code chalana cha raha hota hai agar wo nhi chalti hosakta hai koi error ai us ko hum catch mai daldata hai 
