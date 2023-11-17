@@ -1,0 +1,56 @@
+.parent{
+    
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.child{
+    border: 2px solid rgb(246, 14, 14);
+    width: 400px;
+    height:400px;
+    display: flex;
+    justify-content: center;
+
+    
+}
+.div2{
+     
+
+    
+    margin-top: 70px;
+    width: 100px;
+    height: 100px;
+    
+    border-radius: 48px;
+    
+    box-shadow: 1px -1px 20px 8px rgba(0, 0, 0, 0.3);
+    
+
+}
+
+.flow{
+    display: inline-block;
+    margin-left:30px;
+    text-align: center;
+
+  
+}
+p{
+    text-align: center;
+}
+.flow1{
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    width: 400px;
+    height:400px;
+    align-items: center;
+}
+
+h2,h3{
+    text-align: center;
+}
