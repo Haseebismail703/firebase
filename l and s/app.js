@@ -1,95 +1,80 @@
 
-// getAttribute
 
-// function clicke(){
-//     var a = document.getElementById('inp')
-//     var b = a.getAttribute('id')
-//     console.log(b)
-// }
-
-//    hasAtribute 
-
-// function clicke(){
-//     var a = document.getElementById('inp')
-//     var b = a.hasAttribute('id')
-//     console.log(b)
-// }
-
-
-// function clicke(){
-//     var a = document.getElementById('inp')
-//     var b = a.setAttribute('class','aaa')
-//     console.log(b)
-// }
-// var getul = document.getElementById('ul')
-
-// function clicke(){
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+import { getAuth , createUserWithEmailAndPassword , signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
   
+  const firebaseConfig = {
+    apiKey: "AIzaSyD0FjVwlw_dnXudam_YmvtG-yipsLD8efg",
+    authDomain: "project-1-64704.firebaseapp.com",
+    projectId: "project-1-64704",
+    storageBucket: "project-1-64704.appspot.com",
+    messagingSenderId: "658759651298",
+    appId: "1:658759651298:web:26348013c0010a765cf3bb",
+    measurementId: "G-XV94SF7FXY"
+  };
 
-//     var a = document.getElementById('inp')
-//     var li = document.createElement("li")
-//     var textli = document.createTextNode(a.value)
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+ 
 
-//     li.appendChild(textli)
-//     getul.appendChild(li)
-//     a.value = ''
+//   sign up start 
 
-   
-// }
+let btn = document.getElementById('btn')
+if(btn){
 
-// function Deletall() {
-//    getul.innerHTML=' '
-// }
+let email = document.getElementById('email')
+let password = document.getElementById('password')
 
-let getul = document.getElementById('ul')
-
-function clicke(){
+btn.addEventListener('click',()=>{
 
 
-    let a = document.getElementById('inp')
-    let li = document.createElement('li')
-    li.setAttribute('class','div2')
+    createUserWithEmailAndPassword(auth, email.value, password.value)
+    .then((userCredential) => {
+      // Signed up 
+      const user = userCredential.user;
+      console.log(user)
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage)
 
-    let textli = document.createTextNode(a.value)
-    
+      // ..
+    });
 
-    li.appendChild(textli)
-    getul.appendChild(li)
-    a.value = ''
-  
-    //  del btn 
+})
 
-    let Deletbtn = document.createElement('button')
-    let textlidel = document.createTextNode('Delete')
-    Deletbtn.appendChild(textlidel)
-    li.appendChild(Deletbtn)
-    Deletbtn.setAttribute('onclick','del(this)')
-
-    // css class 
-     Deletbtn.setAttribute('class', 'btn btn-outline-danger btn1')
-    // edittext 
-
-    let edits = document.createElement('button')
-    let edittext = document.createTextNode('Edit')
-    edits.appendChild(edittext)
-    li.appendChild(edits)
-    edits.setAttribute('onclick','edit(this)')
-    edits.setAttribute('class','btn btn-outline-primary btn2')
 }
 
-function Deletall(){
-    getul.innerHTML= ''
-}
+// sign up end 
 
-function del(e){
-    e.parentNode.remove()
-}
+// sign in start
 
-function edit(e){
-    let a = prompt('Enter value')
-   e.parentNode.firstChild.nodeValue = a
+
+let sbtn = document.getElementById('sbtn')
+
+if(sbtn){
+
+let semail = document.getElementById('semail')
+let spassword = document.getElementById('spassword')
+
+sbtn.addEventListener('click',()=>{
+
+
+    signInWithEmailAndPassword(auth, semail.value, spassword.value)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      console.log(user)
+      alert('sign in succesfuly')
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage)
+    });
+})
 }
-// function edit(e){
-//     let a = prompt('Enter value')
-//     e.parentNode.firstChild.nodeValue = a
-// }
