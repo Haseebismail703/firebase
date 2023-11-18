@@ -1,3 +1,11 @@
+
+body{
+    /* background-color: black; */
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230711/pngtree-d-render-blue-podium-display-for-assorted-products-in-a-blue-image_3833920.jpg');
+    background-size: cover;
+}
+
+
 .parent{
     
     height: 100vh; 
@@ -9,13 +17,19 @@
 
 
 .child{
-    border: 2px solid rgb(246, 14, 14);
+    border: 2px solid rgba(2, 248, 223, 0.3);
     width: 400px;
     height:400px;
     display: flex;
     justify-content: center;
+    box-shadow: 14px 1px 50px 15px rgba(12, 219, 198, 0.962)
 
     
+}
+
+
+.child:hover{
+    box-shadow: -53px 2px 34px rgba(247, 247, 247, 0.3);
 }
 .div2{
      
@@ -27,8 +41,14 @@
     
     border-radius: 48px;
     
-    box-shadow: 1px -1px 20px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 14px 1px 50px 15px rgba(12, 219, 198, 0.962)
     
+
+}
+
+.div2:hover{
+
+    box-shadow: 48px 8px 34px rgba(207, 95, 1, 0.3);
 
 }
 
@@ -36,21 +56,47 @@
     display: inline-block;
     margin-left:30px;
     text-align: center;
+   
 
   
 }
 p{
     text-align: center;
+    text-shadow: -3px -2px 34px rgba(145, 150, 172, 0.4);
+    color: #000000;
 }
 .flow1{
-    display: flex;
-    justify-content: center;
-    border: 2px solid black;
+    
+    border: 2px solid rgba(4, 250, 225, 0.3);
     width: 400px;
     height:400px;
     align-items: center;
+    box-shadow: 14px 1px 50px 15px rgba(12, 219, 198, 0.962)
 }
+
+.flow1:hover{
+    box-shadow: 48px 8px 34px rgba(207, 95, 1, 0.3);
+}
+
+
 
 h2,h3{
     text-align: center;
+    text-shadow: -3px -2px 34px rgba(145, 150, 172, 0.4);
+    color: #000000;
+}
+.h3{
+    display: flex;
+    justify-content: center;
+    text-shadow: -3px -2px 34px rgba(145, 150, 172, 0.4);
+    color: #000000;
+    
+}
+.p{
+    border: 2pxrgba(12, 219, 198, 0.3);
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 0px;
+    text-shadow: -3px -2px 34px rgba(145, 150, 172, 0.4);
+    color: #000000;
 }
