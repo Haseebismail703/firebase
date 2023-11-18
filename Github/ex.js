@@ -1,16 +1,35 @@
+
+
+ 
 const btn = async () => {
-    let username = document.getElementById("Input").value;
+   let username = document.getElementById("Input").value;
+   
 
     const res = await fetch(`https://api.github.com/users/${username}`);
     const data = await res.json();
-
+   
     if (data.message == "Not Found") {
-        alert(data.message);
+        
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Enter a username ",
+           
+          });
+   
     }
      else {
+
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1000
+          });
+
+        username.value = ''
         document.getElementById("userDetails").innerHTML = `
-
-
 
         <div class="parent">
        
@@ -31,14 +50,9 @@ const btn = async () => {
      <h2>${data.location}</h2>
 
      
-   
-
-
-
      <!-- vdfvs -->
        </div>
 
-       
     </div>
 
        <div class="flow1" >
@@ -55,54 +69,27 @@ const btn = async () => {
 
 
 </div>
-
-
 <div class="flow"  >
     <div>
        <h3 >Publick repos</h3>
     <p>${data.public_repos}</p> 
     </div>
-    
-    
-
 </div>  
-
-
-
-
 <div class="flow"  >
     <div  class="h3">
-        <h3>User Bio </h3>
+        <h2>User Bio </h2>
 
 </div>
-
-
 <div class="p" >
-     <p >${data.bio}</p> 
+     <p>${data.bio}</p> 
 
 </div>
-   
-
-
-
-
-
-    
-   
-    
-
 </div> 
-
-
     </div>
     </div> 
-
-
-
-
-
-
-
      `
     }
+    
 }
+
+

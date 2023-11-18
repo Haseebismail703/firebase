@@ -3,15 +3,19 @@ body{
     /* background-color: black; */
     background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230711/pngtree-d-render-blue-podium-display-for-assorted-products-in-a-blue-image_3833920.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: unset;
+    
 }
 
 
 .parent{
     
-    height: 100vh; 
+    /* height: 700px;  */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* margin-top: 100px; */
     
 }
 
@@ -104,6 +108,7 @@ h2,h3{
 .con{
     display: flex;
     justify-content: center;
+    margin-top: 0px;
 }
 
 
@@ -118,10 +123,40 @@ h2,h3{
 }
 h1{
     text-align: center;
+    margin-top: 0px;
 }
 input{
-    width: 300px;
-    height: 30px;
-    border-radius: 20px;
+    width: 300px !important;
+    height: 40px !important;
+    border-radius: 20px !important;
+    caret-color: rgb(85, 0, 255);
+    padding: 10px ;
+    border-color: blue ;
+    margin-top: 10px;
+}
+input:active{
+    border-color: blue ;
 }
 
+
+
+
+.button {
+    border: none !important ;
+    outline: none !important;
+    background-color: #423b76 !important;
+    padding: 10px 20px !important;
+    font-size: 12px !important;
+    font-weight: 700!important;
+    color: #b404fa !important ;
+    border-radius: 5px !important;
+    transition: all ease 0.1s !important;
+    box-shadow: 0px 5px 0px 0px #1304e3 !important;
+    margin-top: 0px;
+    
+  }
+  
+  .button:active {
+    transform: translateY(5px) !important;
+    box-shadow: 0px 0px 0px 0px #a29bfe !important;
+  }

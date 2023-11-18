@@ -34,6 +34,8 @@ btn.addEventListener('click',()=>{
       // Signed up 
       const user = userCredential.user;
       console.log(user)
+      email.value=''
+      password.value = ''
       // ...
     })
     .catch((error) => {
@@ -69,6 +71,8 @@ sbtn.addEventListener('click',()=>{
       const user = userCredential.user;
       console.log(user)
       alert('sign in succesfuly')
+      semail.value=''
+      spassword.value = ''
       // ...
     })
     .catch((error) => {
