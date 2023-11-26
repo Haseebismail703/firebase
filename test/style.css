@@ -1,0 +1,37 @@
+
+
+.par{
+ margin-top: 100px;
+ 
+    
+}
+
+
+
+.parentdiv{
+    border: 2px solid black ;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    align-items: center;
+    
+}
+.div1{
+    display: flex;
+    justify-content: center;
+    border: 2px solid ; 
+    margin-top: 10px;
+    align-items: center;
+}
+
+
+
+
+
+
+
+.btl{
+margin-right: 10px;
+
+
+}

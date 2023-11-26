@@ -133,7 +133,7 @@ function getData() {
             else if(newData.type == 'added') {
                 // console.log(newData)
                 ul.innerHTML += `
-                            <li id=${newData.doc.id}>${newData.doc.data().name}  ${newData.doc.data().time} <button onclick="delTodo('${newData.doc.id}')">Delete</button> <button onclick="edit(this,'${newData.doc.id}')">Edit</button></li>
+                            <li  id=${newData.doc.id}>${newData.doc.data().name}  ${newData.doc.data().time} <button onclick="delTodo('${newData.doc.id}')">Delete</button> <button onclick="edit(this,'${newData.doc.id}')">Edit</button></li>
                             `
 
             }
