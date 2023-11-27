@@ -1,6 +1,9 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-import { getFirestore ,collection, addDoc , onSnapshot , doc, deleteDoc ,updateDoc, deleteField } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+import { getFirestore ,collection, addDoc , onSnapshot , doc, deleteDoc ,updateDoc, } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+
+
+import { getAuth , createUserWithEmailAndPassword , signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
 // add data                           collection, addDoc
  // add data mai hai dlete data       doc, deleteDoc 
@@ -23,6 +26,9 @@ let firebaseConfig = {
 let app = initializeApp(firebaseConfig);
 let db = getFirestore(app);
 let ids = []
+
+
+const auth = getAuth(app);
 
 window.addtodo = async function () {
     let getinp = document.querySelector('#getinp')
@@ -94,12 +100,6 @@ window.getData = getData
 window.delTodo = delTodo
 window.edit = edit
 window.dlall=dlall
-
-
-
-
-
-//  sign up and sign in code 
 
 
 
