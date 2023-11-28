@@ -38,6 +38,26 @@ window.addtodo = async function () {
     });
     console.log("Document written with ID: ", docRef.id);
     getinp.value = ''
+
+
+
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 900,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "ADD todo  successfull"
+      });
+
 }
 
 function getData() {
@@ -66,30 +86,161 @@ getData()
 
 async function delTodo(id) {
     await deleteDoc(doc(db, "todos", id));
+
+
+
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Delete  successfull"
+      });
 }
 
 
 async function edit(e,id) {
     let editval = prompt('Enter Edit value')
+    if(editval == ''){
+         Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "please Entera value",
+           
+          });
+        
 
-    e.parentNode.firstChild.nodeValue = editval
+
+    }
+    else{
+
+       
+
+
+
+
+
+
+ e.parentNode.firstChild.nodeValue = editval
+
+
 
     await updateDoc(doc(db, "todos", id), {
         name: editval,
         time: new Date().toLocaleString()
     });
-}
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 700,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Edit successfull"
+      });
 
 
 
-
- async function dlall(){
-    let li = document.getElementsByClassName('list')
-    li.innerHTML=" ";
-    for(let i= 0; i<ids.length; i++){
-        await deleteDoc(doc(db, "todos", ids[i]));
     }
+
+
+   
+
+
+
+
+
+
+
+    
 }
+
+
+
+
+  function dlall(){
+
+ Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert todos!",
+        icon: "warning",
+        showCancelButton: false,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+        
+      })
+      
+      
+      
+      .then(async(result) => {
+
+
+        let li = document.getElementsByClassName('list')
+        li.innerHTML=" ";
+        for(let i= 0; i<ids.length; i++){
+            await deleteDoc(doc(db, "todos", ids[i]));
+    
+        }
+
+
+
+
+
+
+
+        
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your todos has been deleted.",
+            icon: "success"
+          });
+        }
+
+
+        
+      });
+
+
+
+
+
+
+
+
+
+}
+
+
+    // let li = document.getElementsByClassName('list')
+    // li.innerHTML=" ";
+    // for(let i= 0; i<ids.length; i++){
+    //     await deleteDoc(doc(db, "todos", ids[i]));
+
+    // }
+
+
+
+
+
+   
 
 
 
