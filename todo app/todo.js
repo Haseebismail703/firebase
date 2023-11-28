@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
 import { getFirestore ,collection, addDoc , onSnapshot , doc, deleteDoc ,updateDoc, } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 
-import { getAuth , createUserWithEmailAndPassword , signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+
 
 // add data                           collection, addDoc
  // add data mai hai dlete data       doc, deleteDoc 
@@ -28,7 +28,7 @@ let db = getFirestore(app);
 let ids = []
 
 
-const auth = getAuth(app);
+
 
 window.addtodo = async function () {
     let getinp = document.querySelector('#getinp')
@@ -37,7 +37,7 @@ window.addtodo = async function () {
         time: new Date().toLocaleString()
     });
     console.log("Document written with ID: ", docRef.id);
-
+    getinp.value = ''
 }
 
 function getData() {
@@ -52,7 +52,7 @@ function getData() {
             else if(newData.type == 'added') {
                 // console.log(newData)
                 ul.innerHTML += `
-                            <li class="list"  id=${newData.doc.id}>${newData.doc.data().name}  ${newData.doc.data().time} <button onclick="delTodo('${newData.doc.id}')">Delete</button> <button onclick="edit(this,'${newData.doc.id}')">Edit</button></li>
+                            <li class="list"  id=${newData.doc.id}>${newData.doc.data().name}  ${newData.doc.data().time} <button class="dl" onclick="delTodo('${newData.doc.id}')">Delete</button> <button onclick="edit(this,'${newData.doc.id}')">Edit</button></li>
                             `
 
             }

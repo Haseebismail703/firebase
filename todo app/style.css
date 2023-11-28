@@ -1,12 +1,12 @@
 
 
 .todo{
-background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-background-size:  cover;
-    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size:  cover;
+    /* width: 100%; */
     border-radius: 10px;
     padding: 10px;
-
+    
 }
 html{
   background: radial-gradient(rgb(252, 115,   156) 5%, rgb(101, 66, 197) 86%);
@@ -64,6 +64,7 @@ button {
     overflow: hidden;
     height: 50px;
     width: 250px;
+    
    }
    
    button::before {
@@ -115,23 +116,26 @@ button {
     min-height: 100vh;
   } */
   h1 {
-    color: hsl(0, 0%, 28%);
+    color: hsl(241, 97%, 37%);
     font-size: 50px;
     font-weight: bold;
     font-family: monospace;
     letter-spacing: 7px;
     cursor: pointer;
+    word-spacing: 10%;
   }
   
   h1 span {
     transition: 0.5s ease-out;
+   
   }
+ 
   h1:hover span:nth-child(1) {
     margin-right: 5px;
   }
-  h1:hover span:nth-child(1):after {
+  /* h1:hover span:nth-child(1):after {
     content: "'";
-  }
+  } */
   h1:hover span:nth-child(2) {
     margin-left: 30px;
   }
@@ -139,3 +143,42 @@ button {
     color: #fff;
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
   }
+
+li{
+  word-wrap: break-word;
+  color: rgb(245, 248, 248);
+}
+
+.dl{
+ background-color: rgb(158, 23, 23);
+  color: rgb(0, 0, 0);
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.dl:hover {
+  color: red;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+ }
+ li{
+  list-style: decimal-leading-zero;
+  margin-top: 10px;
+  margin-bottom: 10px;
+ }
+
+ #getinp{
+  margin-left: 0px;
+ }
+
+
+
+
+ /* @media screen and (max-width: 482px) {
+  body{
+    background-color: black;
+  }
+} */
