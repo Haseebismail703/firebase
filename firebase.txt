@@ -1,4 +1,14 @@
 try 
 hum jo code chalana cha raha hota hai agar wo nhi chalti hosakta hai koi error ai us ko hum catch mai daldata hai
 
+addoc id khud bnata hai 
 
+setdoc hama bnani parti hai 
+
+Database mai 4 cheza main hoti hai 
+
+delete karna
+addkarna
+update karna 
+get karna 
+ 
