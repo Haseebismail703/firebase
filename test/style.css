@@ -64,7 +64,7 @@ li{
 
 
 
- *,
+ /* *,
 *:before,
 *:after{
     padding: 0;
@@ -183,4 +183,5 @@ body{
     cursor: pointer;
     outline: none;
 
-}
+} */
+
