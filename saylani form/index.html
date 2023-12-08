@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saylani form</title>
 
-   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,8 +25,8 @@
 
         <div>
 
-  <label  for="">Selct City</label><br>
-     <select   name="" id="" >
+  <label  for="">Select City</label><br>
+     <select   name="" id="karachi" >
         <option value="" disabled selected >Select city</option>
         <option value="">Karachi</option>
      </select> 
@@ -37,9 +37,9 @@
      <div>
 
        <br>
-     <label   for="">Selct Cource</label><br>
-     <select   name="" id="" >
-        <option value="" disabled selected >Selct Cource </option>
+     <label   for="">Select Cource</label><br>
+     <select   name="" id="Select" >
+        <option value="" disabled selected >Select Cource </option>
         <option value="">Web devolepment</option>
         <option value="">Graphic designing</option>
         <option value="">AI chatbot</option>
@@ -58,7 +58,7 @@
      <div>
 
         <label for="">Full name</label><br>
-          <input type="text" name="" id="" placeholder="Full name" >
+          <input type="text" name="" id="Full" placeholder="Full name" >
 
       
               </div>
@@ -68,7 +68,7 @@
       
              <br>
            <label  for="">Father name</label><br>
-           <input  type="text" placeholder="Father name">
+           <input id="Father"  type="text" placeholder="Father name">
        
            </div>
       
@@ -83,7 +83,7 @@
     <div>
 
         <label for="">Email</label><br>
-          <input type="email" name="" id="" placeholder="Email">
+          <input type="email" name="" id="email" placeholder="Email">
       
               </div>
             
@@ -92,7 +92,7 @@
       
              <br>
            <label for="">Phone No</label><br>
-           <input type="number" name="" id="" placeholder="Phone No">
+           <input type="number" name="" id="Phone" placeholder="Phone No">
        
            </div>
            <br>
@@ -104,7 +104,7 @@
 <div>
 
     <label for="">CNIC</label><br>
-     <input type="number" name="" id="" placeholder="CNIC">
+     <input type="number" name="" id="CNIC" placeholder="CNIC">
   
           </div>
         
@@ -113,7 +113,7 @@
   
          <br>
        <label for="">Address</label><br>
-      <input type="text" name="" id="" placeholder="Address">
+      <input type="text" name="" id="Address" placeholder="Address">
    
        </div>
        <br>
@@ -125,7 +125,7 @@
 <div>
 
     <label for="">Date of birth</label><br>
-       <input type="date" name="" id="" placeholder="Date of birth">
+       <input type="date" name="" id="Date" placeholder="Date of birth">
           </div>
         
     
@@ -133,7 +133,7 @@
         
          <br>
        <label for="">Select gender</label><br>
-       <select name="" id="" >
+       <select name="" id="gender" >
           <option value="" disabled selected >Select gender</option>
           <option value="">Male</option>
           <option value="">Female</option>
@@ -154,7 +154,7 @@
        <div>
 
         <label for="">Last qualification</label><br>
-           <select name="" id="" >
+           <select name="" id="qualification" >
               <option value="" disabled selected >Last qualification</option>
               <option value="">Matric</option>
               <option value="">Intermediate</option>
@@ -169,7 +169,7 @@
       
              <br>
            <label for="">Do you have a Laptop?</label><br>
-           <select name="" id="" >
+           <select name="" id="Laptop" >
               <option value="" disabled selected >Do you have a Laptop?</option>
               <option value="">Yes</option>
               <option value="">No</option>
@@ -211,7 +211,7 @@
   <br><br>
 
   
-<button class="button" style="vertical-align:middle"><span>Submit</span></button>
+<button id="btn" class="button" style="vertical-align:middle"><span>Submit</span></button>
 
 
 </div>
@@ -237,8 +237,8 @@
 
 
 
-
-
-   <script type="module" src="app.js"></script>
+ <script type="module" src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  
 </body>
 </html>

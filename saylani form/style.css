@@ -33,6 +33,7 @@ input{
 }
 
 .div1{
+   
      background: linear-gradient(90deg, #FFFFFF 0%, #44FFEE 100%);
 
      background: radial-gradient(rgb(115, 252, 187) 0%, rgb(139, 102, 241) 100%);
@@ -88,7 +89,7 @@ label ,option {
   }
   .div1{
     margin-top: 100px;
-    border: 4px solid rgba(0, 0, 0, 0.1);
+    /* border: 4px solid rgba(0, 0, 0, 0.1); */
     border-radius: 23px;
   }
   
