@@ -1,6 +1,6 @@
 
  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
- import { getAuth , createUserWithEmailAndPassword   } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+//  import { getAuth , createUserWithEmailAndPassword   } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
  import { getFirestore ,collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
  
 
@@ -18,13 +18,14 @@
 
  // Initialize Firebase
  const app = initializeApp(firebaseConfig);
- const auth = getAuth(app);
+//  const auth = getAuth(app);
  const db = getFirestore(app);
 
 
 
  let btn = document.getElementById('btn')
-if(btn){
+if(btn)
+{
 let karachi = document.getElementById('karachi')
 let Select = document.getElementById('Select')
 let Full = document.getElementById('Full')
@@ -38,21 +39,11 @@ let gender = document.getElementById('gender')
 let qualification = document.getElementById('qualification')
 let Laptop = document.getElementById('Laptop')
 
-btn.addEventListener('click',()=>{
+btn.addEventListener('click',async()=>{
 
-
-    createUserWithEmailAndPassword(auth, karachi.value, Select.value)
-    .then(async(userCredential) => {
-      // Signed up 
-      const user = userCredential.user;
-      console.log(user)
-
-  
-
-
-      // Full.value=""
-      // password.value = ''
-      // ...
+   //   // Full.value=""
+    //   // password.value = ''
+    //   // ...
 
       
 
@@ -87,21 +78,7 @@ btn.addEventListener('click',()=>{
 // location.href="./login.html"
 
     })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorMessage)
-
-
-    
-
-
-      // ..
-
-
-    });
-
-})
+ 
 
 }
 

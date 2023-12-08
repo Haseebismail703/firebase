@@ -12,3 +12,5 @@ addkarna
 update karna 
 get karna 
  
+,Full.value
+      ,Father.value,email.value,Phone.value,getCNIC.value,Address.value,Date.value,gender.value,qualification.value,Laptop.value
