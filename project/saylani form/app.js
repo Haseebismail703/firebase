@@ -50,7 +50,7 @@ btn.addEventListener('click',async()=>{
      
       try {
         const docRef = await addDoc(collection(db, "users"), {
-        karachi: karachi.value,
+        karachi: 'karachi',
         Full: Full.value ,
         Select: Select.value ,
         Father: Father.value,
@@ -82,4 +82,3 @@ btn.addEventListener('click',async()=>{
 
 }
 
- 
