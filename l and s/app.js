@@ -2,7 +2,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 import { getAuth , createUserWithEmailAndPassword , signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
-import { getFirestore  ,collection, addDoc , getDocs ,doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+import { getFirestore  ,collection, addDoc ,doc, setDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
   const firebaseConfig = {
     apiKey: "AIzaSyD0FjVwlw_dnXudam_YmvtG-yipsLD8efg",
     authDomain: "project-1-64704.firebaseapp.com",
@@ -38,17 +38,20 @@ btn.addEventListener('click',()=>{
       // password.value = ''
       // ...
       try {
-        const docRef = await addDoc(collection(db, "users"), {
-          email: email.value ,
-          password : password.value,
-         
+        await setDoc(doc(db, "users", user.uid), {
+          email: email.value,
+          password: password.value,
+          uid : user.uid
+          
         });
-        console.log("Document written with ID: ", docRef.id);
+
+        console.log('added');
+        // console.log("Document written with ID: ", docRef.id);
       } catch (e) {
         console.error("Error adding document: ", e);
       }
       
-      location.href = './login.html'
+      // location.href = './login.html'
 
 
 
@@ -113,16 +116,16 @@ sbtn.addEventListener('click',()=>{
 
 
 
-let getalluser = async()=>{
+// let getalluser = async()=>{
 
-  const querySnapshot = await getDocs(collection(db, "users"));
-  querySnapshot.forEach((doc) => {
-  console.log(`${doc.id} =>` ,doc.data()); 
-  // document.write(doc.id ,doc.data())
-});
-}
+//   const querySnapshot = await getDocs(collection(db, "users"));
+//   querySnapshot.forEach((doc) => {
+//   console.log(`${doc.id} =>` ,doc.data()); 
+//   // document.write(doc.id ,doc.data())
+// });
+// }
 
-getalluser()
+// getalluser()
 
 
 
@@ -130,35 +133,35 @@ getalluser()
 
 
 // Update Document eamil password
-let Update = document.getElementById('Update')
-if(Update){
-Update.addEventListener('click',async()=>{
-    const id = auth.currentUser.uid 
-    const washingtonRef = doc(db, "users", id);
+// let Update = document.getElementById('Update')
+// if(Update){
+// Update.addEventListener('click',async()=>{
+//     const id = auth.currentUser.uid 
+//     const washingtonRef = doc(db, "users", id);
 
-    let email = document.getElementById('email')
-    let password = document.getElementById('password')
+//     let email = document.getElementById('email')
+//     let password = document.getElementById('password')
 
-    try{
-          await updateDoc(washingtonRef, {
-      email: email.value ,
-      password : password.value
+//     try{
+//           await updateDoc(washingtonRef, {
+//       email: email.value ,
+//       password : password.value
       
-});
-console.log('update')
-    }catch(err){
+// });
+// console.log('update')
+//     }catch(err){
 
-      console.log(err)
-    }
+//       console.log(err)
+//     }
 
     
 
 
 
-})
+// })
 
 
-}
+// }
 
 
 
