@@ -82,3 +82,14 @@ btn.addEventListener('click',async()=>{
 
 }
 
+//  const dataSelect = document.getElementById('data-select');
+// const addDataBtn = document.getElementById('add-data-btn');
+
+
+
+// addDataBtn.addEventListener('click', () => {
+
+    
+// const selectedValue = dataSelect.options[dataSelect.selectedIndex];
+//  let value1 =  selectedValue.value
+// document.write(value1)
