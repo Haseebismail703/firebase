@@ -35,7 +35,7 @@ createUserWithEmailAndPassword(auth, email.value, password.value)
     // Signed up 
     const user = userCredential.user;
     console.log(user)
-    window.location ='./signin.html'
+    // window.location ='./signin.html'
   })
   .catch((error) => {
     const errorCode = error.code;

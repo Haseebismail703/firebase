@@ -65,7 +65,10 @@ function getData() {
     onSnapshot(collection(db, 'todos'), (data) => {
         data.docChanges().forEach((newData) => {
          ids.push(newData.doc.id)
+
+
             if (newData.type == 'removed') {
+              
                 let del = document.getElementById(newData.doc.id)
                 del.remove()
             }

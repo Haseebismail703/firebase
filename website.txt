@@ -22,8 +22,14 @@ https://dev.to/davidepacilio/40-free-html-landing-page-templates-3gfp
 8-video ai
 https://lumalabs.ai/
 
-https://coolors.co/image-picker
+9-animation 
+https://michalsnik.github.io/aos/
 
+10-scroll
+https://kenwheeler.github.io/slick/
+https://coolors.co/image-picker
+11- ani
+https://animista.net/play/background/color-change
 
 https://geeksui.codescandy.com/geeks/pages/landings/home-academy.html
 

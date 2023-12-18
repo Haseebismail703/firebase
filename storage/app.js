@@ -112,10 +112,6 @@ deleteObject(desertRef).then((res) => {
 }).catch((error) => {
   console.log(error);
 });
-
-
-
-
 })
 
 

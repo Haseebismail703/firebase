@@ -32,7 +32,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebas
     // Signed in 
     const user = userCredential.user;
     console.log(user.email)
-    window.location = './index.html'
+    // window.location = './index.html'
   })
   .catch((error) => {
     const errorCode = error.code;
