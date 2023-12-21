@@ -195,8 +195,8 @@ async function edit(e,id) {
       .then(async(result) => {
 
 
-        let li = document.getElementsByClassName('list')
-        li.innerHTML=" ";
+        let getul = document.getElementsByClassName('getul')
+        getul.innerHTML=" ";
         for(let i= 0; i<ids.length; i++){
             await deleteDoc(doc(db, "todos", ids[i]));
     

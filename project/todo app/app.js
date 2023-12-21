@@ -25,20 +25,20 @@ if(btn){
 
 
 btn.addEventListener('click',()=>{
-let name = document.getElementById('name')
+// let n = document.getElementById('n')
 let email = document.getElementById('email')
 let password = document.getElementById('password')
 
 let user = {
 
-  name : name.value ,
+  // n : n.value ,
   email : email.value , 
   password : password.value
 
 
 }
 
-  createUserWithEmailAndPassword(auth,user.name ,user. email,user. password)
+  createUserWithEmailAndPassword(auth,user. email,user. password)
   .then(async(userCredential) => {
     // Signed up 
     const user = userCredential.user;
@@ -49,9 +49,11 @@ let user = {
 
     try {
       const docRef = await addDoc(collection(db, "users"), {
-        first: name.value,
+        // first: name.value,
         last: email.value,
         born: password.value
+
+        
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
@@ -104,7 +106,7 @@ sbtn.addEventListener('click',()=>{
         icon: "success"
       });
 
-
+     location.href = 'todo.html'
  const user = userCredential.user;
       console.log(user)
 
