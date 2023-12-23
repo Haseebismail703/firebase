@@ -127,7 +127,7 @@ let Uplode = document.getElementById('Uplode')
 
 
 Uplode.addEventListener('click',()=>{
-
+   
  let file = document.getElementById('file')
  const storageRef = ref(storage, `images/${file.files[0].name}`);
 
