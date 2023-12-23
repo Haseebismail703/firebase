@@ -20,99 +20,147 @@ const storage = getStorage(app);
 
 
 
-let upload = document.getElementById('Uplode')
+// let upload = document.getElementById('Uplode')
 
 
-let uploadfile = (file) => {
+// let uploadfile = (file) => {
 
-  return new Promise((resolve,reject,)=>{
-  const storageRef = ref(storage, `images/${file.name}`);
+//   return new Promise((resolve,reject,)=>{
+//   const storageRef = ref(storage, `images/${file.name}`);
 
-   // 'file' comes from the Blob or File API
-    uploadBytes(storageRef, file).then((snapshot) => {
-    // console.log('Uploaded a blob or file!');
+//    // 'file' comes from the Blob or File API
+//     uploadBytes(storageRef, file).then((snapshot) => {
+//     // console.log('Uploaded a blob or file!');
 
 
 
-    const uploadTask = uploadBytesResumable(storageRef, file);
+//     const uploadTask = uploadBytesResumable(storageRef, file);
 
     
-    uploadTask.on('state_changed', 
-      (snapshot) => {
+//     uploadTask.on('state_changed', 
+//       (snapshot) => {
         
-        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done');
-        // console.log('Upload is 100% done');
-        switch (snapshot.state) {
-          case 'paused':
-            console.log('Upload is paused');
-            break;
-          case 'running':
-            console.log('Upload is running');
-            break;
-        }
+//         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+//         console.log('Upload is ' + progress + '% done');
+//         // console.log('Upload is 100% done');
+//         switch (snapshot.state) {
+//           case 'paused':
+//             console.log('Upload is paused');
+//             break;
+//           case 'running':
+//             console.log('Upload is running');
+//             break;
+//         }
       
 
 
-      }, 
-      (error) => {
-        // Handle unsuccessful uploads
-        reject(error)
-      }, 
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          // console.log('File available at', downloadURL);
+//       }, 
+//       (error) => {
+//         // Handle unsuccessful uploads
+//         reject(error)
+//       }, 
+//       () => {
+//         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+//           // console.log('File available at', downloadURL);
 
-          resolve(downloadURL)
-        });
-      }
-    );
+//           resolve(downloadURL)
+//         });
+//       }
+//     );
 
 
 
-  });
+//   });
 
 
     
-  })
+//   })
 
 
-}
+// }
 
 
 
 
-upload.addEventListener('click',async()=>{
+// upload.addEventListener('click',async()=>{
 
-  try{
-    let file = document.getElementById('file')
- const res =  await uploadfile(file.files[0])
- let img = document.getElementById('img')
- img.src= res
- console.log('err--->',res);
+//   try{
+//     let file = document.getElementById('file')
+//  const res =  await uploadfile(file.files[0])
+//  let img = document.getElementById('img')
+//  img.src= res
+//  console.log('err--->',res);
    
-  }catch(err){
-   console.log(err);
+//   }catch(err){
+//    console.log(err);
 
+//   }
+
+// })
+
+
+// let delbtn =document.getElementById('delete')
+
+// delbtn.addEventListener('click',()=>{
+
+// // Creae a reference to the file to delete
+// const desertRef = ref(storage, 'images/wave-haikei.png');
+
+// // Delete the file
+// deleteObject(desertRef).then((res) => {
+//   console.log(res,'File deleted successfully');
+// }).catch((error) => {
+//   console.log(error);
+// });
+// })
+
+var loader = document.querySelector('.preloader')
+    window.addEventListener('load',()=>{
+    loader.style.display = 'none'
+  
+  
+    })
+
+let Uplode = document.getElementById('Uplode')
+
+
+
+
+Uplode.addEventListener('click',()=>{
+
+ let file = document.getElementById('file')
+ const storageRef = ref(storage, `images/${file.files[0].name}`);
+
+ const uploadTask = uploadBytesResumable(storageRef, file.files[0]);
+
+
+uploadTask.on('state_changed', 
+  (snapshot) => {
+   
+    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case 'paused':
+        console.log('Upload is paused');
+        break;
+      case 'running':
+        console.log('Upload is running');
+        break;
+    }
+  }, 
+  (error) => {
+   
+  }, 
+  () => {
+    
+    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+      console.log('File available at', downloadURL);
+      let img  = document.getElementById('img')
+      img.src = downloadURL
+    });
   }
+);
+
 
 })
-
-
-let delbtn =document.getElementById('delete')
-
-delbtn.addEventListener('click',()=>{
-
-// Creae a reference to the file to delete
-const desertRef = ref(storage, 'images/wave-haikei.png');
-
-// Delete the file
-deleteObject(desertRef).then((res) => {
-  console.log(res,'File deleted successfully');
-}).catch((error) => {
-  console.log(error);
-});
-})
-
-
 
